@@ -86,7 +86,7 @@ public class LORSink {
     FlinkSink.forRow(stream, FlinkSchemaUtil.toSchema(schema))
         .tableLoader(TableLoader.fromCatalog(catalogLoader, outputTable))
         .distributionMode(DistributionMode.HASH)
-        .writeParallelism(2)
+        .writeParallelism(3)
         .append();
     // Execute the flink app
     env.execute();

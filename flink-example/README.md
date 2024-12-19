@@ -28,7 +28,9 @@ git clone git@github.com:tabular-io/docker-spark-iceberg.git
 cd flink-example
 docker compose up
 # Increase the number of taskmanagers at runtime:
-# docker-compose up -d --scale taskmanager=4
+# docker-compose up -d --scale taskmanager=4 (fail)
+# docker-compose up -d --scale taskmanager=4 --no-recreate (fail)
+# docker-compose -f add-taskmanager-docker-compose.yml up -d
 ```
 
 Build the Flink application.
